@@ -1,0 +1,5 @@
+/build*/
+/.tools/
+*.hfb
+**/__pycache__/
+gmon.out
