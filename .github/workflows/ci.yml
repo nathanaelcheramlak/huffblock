@@ -1,0 +1,59 @@
+name: build-and-test
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+
+jobs:
+  portable:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        configuration: [Debug, Release]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=${{ matrix.configuration }}
+      - run: cmake --build build --config ${{ matrix.configuration }} --parallel 2
+      - run: ctest --test-dir build -C ${{ matrix.configuration }} --output-on-failure
+  sanitizer:
+    strategy:
+      fail-fast: false
+      matrix:
+        sanitizer: [address, thread]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DHUFFBLOCK_SANITIZER=${{ matrix.sanitizer }}
+      - run: cmake --build build --parallel 2
+      - name: Run instrumented tests
+        shell: bash
+        run: |
+          if [ "${{ matrix.sanitizer }}" = thread ]; then
+            setarch "$(uname -m)" -R ctest --test-dir build --output-on-failure
+          else
+            ctest --test-dir build --output-on-failure
+          fi
+  reference-codec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DHUFFBLOCK_REFERENCE_CODEC=ON
+      - run: cmake --build build --parallel 2
+      - run: ctest --test-dir build --output-on-failure
+  fuzz:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - run: cmake -S . -B build -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Debug -DHUFFBLOCK_SANITIZER=address -DHUFFBLOCK_BUILD_FUZZER=ON
+      - run: cmake --build build --target huffblock_fuzz_decode --parallel 2
+      - run: python3 tools/fuzz_corpus.py build/corpus
+      - run: ./build/huffblock_fuzz_decode build/corpus -max_total_time=20 -max_len=65536 -rss_limit_mb=1024 -timeout=5
