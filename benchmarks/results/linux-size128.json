@@ -1,0 +1,258 @@
+{
+  "metadata": {
+    "utc": "2026-10-21T23:46:39.210365+00:00",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics",
+    "logical_cpus": 16,
+    "python": "3.10.12",
+    "executable": "/mnt/d/Dev/huffblock/build-release/huffblock",
+    "executable_sha256": "55dda16d2e2aeda7eb39ea1b5cd8ea4c68aa6b624aebc3ee6a89ba8740a13e94",
+    "version": "huffblock 0.3.0 (format version 1)",
+    "size_mib": 128,
+    "seed": 20261022,
+    "repeats": 3,
+    "warmups_per_case": 1,
+    "threads": [
+      1,
+      4
+    ],
+    "block_sizes": [
+      2097152
+    ],
+    "scope": "wall time includes process startup, file I/O, checksums, close and publication; excludes hashing/generation",
+    "cache": "warm filesystem cache; no fsync, cache eviction, CPU pinning, or isolated host",
+    "memory": "isolated GNU time child peak RSS on Linux; Windows peak working set via GetProcessMemoryInfo",
+    "measurement_overhead": "Linux wall time includes GNU time launcher startup; CPU time includes helper and CLI",
+    "synthetic": "text/skewed/repetitive repeat deterministic tiles; random uses full seeded bytes; compressed is gzip of seeded random",
+    "work_filesystem_path": "/var/tmp/huffblock-phase3-bench",
+    "version_process_peak_rss_bytes": 3596288,
+    "cmake": [
+      "CMAKE_BUILD_TYPE:STRING=Release",
+      "CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++",
+      "CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG",
+      "HUFFBLOCK_PROFILE:BOOL=OFF",
+      "HUFFBLOCK_REFERENCE_CODEC:BOOL=OFF"
+    ],
+    "datasets": {
+      "text": {
+        "bytes": 134217728,
+        "sha256": "d679612c42cc6cbe69ff2fb5a1850f798372ff8eb7984a7f4a88bb9c2f8b3db0"
+      }
+    },
+    "archive_sha256": {
+      "text:2097152": "fd84ec9f9eb5bc74ae48ffed75ec2e6b8d6ebac14dce959ea8469308ff922e8a"
+    }
+  },
+  "summary": [
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 1,
+      "operation": "compress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "ratio": 0.5830873474478722,
+      "median_seconds": 0.5092096060000131,
+      "min_seconds": 0.4913544750000085,
+      "max_seconds": 0.533360182000024,
+      "stdev_seconds": 0.02108133236116248,
+      "mib_per_second": 251.36996335453404,
+      "peak_rss_bytes": 7229440,
+      "speedup": 1.0
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 1,
+      "operation": "decompress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "ratio": 0.5830873474478722,
+      "median_seconds": 0.7802877860000024,
+      "min_seconds": 0.7164276549999897,
+      "max_seconds": 0.7888183930000139,
+      "stdev_seconds": 0.039562833011374796,
+      "mib_per_second": 164.04203974044984,
+      "peak_rss_bytes": 7180288,
+      "speedup": 1.0
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 4,
+      "operation": "compress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "ratio": 0.5830873474478722,
+      "median_seconds": 0.13919061400000032,
+      "min_seconds": 0.13553112300002113,
+      "max_seconds": 0.14025701600002094,
+      "stdev_seconds": 0.002478680840421102,
+      "mib_per_second": 919.6022369726719,
+      "peak_rss_bytes": 25882624,
+      "speedup": 3.6583616622311323
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 4,
+      "operation": "decompress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "ratio": 0.5830873474478722,
+      "median_seconds": 0.20287358899997798,
+      "min_seconds": 0.2012618459999942,
+      "max_seconds": 0.20551291200001742,
+      "stdev_seconds": 0.0021461323170254994,
+      "mib_per_second": 630.9347640121548,
+      "peak_rss_bytes": 35364864,
+      "speedup": 3.846177266574049
+    }
+  ],
+  "trials": [
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 1,
+      "repeat": 0,
+      "operation": "compress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.4913544750000085,
+      "cpu_seconds": 0.495521,
+      "peak_rss_bytes": 7172096
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 1,
+      "repeat": 0,
+      "operation": "decompress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.7164276549999897,
+      "cpu_seconds": 0.724108,
+      "peak_rss_bytes": 7180288
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 1,
+      "repeat": 1,
+      "operation": "compress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.533360182000024,
+      "cpu_seconds": 0.5172019999999999,
+      "peak_rss_bytes": 7172096
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 1,
+      "repeat": 1,
+      "operation": "decompress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.7888183930000139,
+      "cpu_seconds": 0.782592,
+      "peak_rss_bytes": 7176192
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 1,
+      "repeat": 2,
+      "operation": "compress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.5092096060000131,
+      "cpu_seconds": 0.500911,
+      "peak_rss_bytes": 7229440
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 1,
+      "repeat": 2,
+      "operation": "decompress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.7802877860000024,
+      "cpu_seconds": 0.774569,
+      "peak_rss_bytes": 7176192
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 4,
+      "repeat": 0,
+      "operation": "compress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.13919061400000032,
+      "cpu_seconds": 0.551229,
+      "peak_rss_bytes": 25767936
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 4,
+      "repeat": 0,
+      "operation": "decompress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.20551291200001742,
+      "cpu_seconds": 0.8484769999999999,
+      "peak_rss_bytes": 34152448
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 4,
+      "repeat": 1,
+      "operation": "compress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.13553112300002113,
+      "cpu_seconds": 0.540639,
+      "peak_rss_bytes": 25882624
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 4,
+      "repeat": 1,
+      "operation": "decompress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.2012618459999942,
+      "cpu_seconds": 0.832015,
+      "peak_rss_bytes": 34185216
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 4,
+      "repeat": 2,
+      "operation": "compress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.14025701600002094,
+      "cpu_seconds": 0.5711769999999999,
+      "peak_rss_bytes": 25800704
+    },
+    {
+      "dataset": "text",
+      "block_size": 2097152,
+      "threads": 4,
+      "repeat": 2,
+      "operation": "decompress",
+      "original_bytes": 134217728,
+      "stored_bytes": 78260659,
+      "seconds": 0.20287358899997798,
+      "cpu_seconds": 0.82519,
+      "peak_rss_bytes": 35364864
+    }
+  ]
+}

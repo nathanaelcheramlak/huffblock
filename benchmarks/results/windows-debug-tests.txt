@@ -1,0 +1,91 @@
+Start testing: Oct 22 02:52 E. Africa Standard Time
+----------------------------------------------------------
+1/4 Testing: codec_and_archive
+1/4 Test: codec_and_archive
+Command: "D:/Dev/huffblock/build-windows-debug/huffblock_tests.exe"
+Directory: D:/Dev/huffblock/build-windows-debug
+"codec_and_archive" start time: Oct 22 02:52 E. Africa Standard Time
+Output:
+----------------------------------------------------------
+PASS CRC-32 known vectors
+PASS independently known canonical codes
+PASS single symbols and raw fallback
+PASS maximum 32-bit canonical code
+PASS raw fallback for codes beyond 32 bits
+PASS unaligned 32-bit encoder codes
+PASS seeded block round trips
+PASS malformed blocks
+PASS independently specified archive bytes
+PASS archive boundaries and mixed encodings
+PASS malformed and truncated archives
+PASS stream read, write, and flush failures
+PASS file preservation and failure cleanup
+13/13 test groups passed
+<end of output>
+Test time =   4.84 sec
+----------------------------------------------------------
+Test Passed.
+"codec_and_archive" end time: Oct 22 02:52 E. Africa Standard Time
+"codec_and_archive" time elapsed: 00:00:04
+----------------------------------------------------------
+
+2/4 Testing: parallel_and_publication
+2/4 Test: parallel_and_publication
+Command: "D:/Dev/huffblock/build-windows-debug/huffblock_parallel_tests.exe"
+Directory: D:/Dev/huffblock/build-windows-debug
+"parallel_and_publication" start time: Oct 22 02:52 E. Africa Standard Time
+Output:
+----------------------------------------------------------
+PASS identical archives and round trips across execution settings
+PASS delayed first block bounds completed results and preserves order
+PASS reader, worker, and writer failures join all workers
+PASS shared cooperative stop token
+PASS parallel codec and I/O failures
+PASS temporary visibility, cleanup, and late destination collision
+PASS concurrent publication never overwrites
+PASS parallel file failure cleanup
+8/8 parallel test groups passed
+<end of output>
+Test time =   1.75 sec
+----------------------------------------------------------
+Test Passed.
+"parallel_and_publication" end time: Oct 22 02:52 E. Africa Standard Time
+"parallel_and_publication" time elapsed: 00:00:01
+----------------------------------------------------------
+
+3/4 Testing: malformed_and_limits
+3/4 Test: malformed_and_limits
+Command: "D:/Dev/huffblock/build-windows-debug/huffblock_adversarial_tests.exe"
+Directory: D:/Dev/huffblock/build-windows-debug
+"malformed_and_limits" start time: Oct 22 02:52 E. Africa Standard Time
+Output:
+----------------------------------------------------------
+PASS resource and arithmetic limits
+PASS lookup, long-code, and padding boundaries
+Mutation cases: 30 accepted, 15766 rejected; seed 0x48554646
+PASS deterministic mutation and truncation campaign
+<end of output>
+Test time =   2.04 sec
+----------------------------------------------------------
+Test Passed.
+"malformed_and_limits" end time: Oct 22 02:52 E. Africa Standard Time
+"malformed_and_limits" time elapsed: 00:00:02
+----------------------------------------------------------
+
+4/4 Testing: cli
+4/4 Test: cli
+Command: "D:/Dev/huffblock/.tools/cmake-4.4.4-windows-x86_64/bin/cmake.exe" "-DHUFFBLOCK=D:/Dev/huffblock/build-windows-debug/huffblock.exe" "-DTEST_DIR=D:/Dev/huffblock/build-windows-debug/cli-tests" "-P" "D:/Dev/huffblock/tests/cli.cmake"
+Directory: D:/Dev/huffblock/build-windows-debug
+"cli" start time: Oct 22 02:52 E. Africa Standard Time
+Output:
+----------------------------------------------------------
+-- CLI checks passed; artifacts: D:/Dev/huffblock/build-windows-debug/cli-tests/cd6fd5cda0655ef1
+<end of output>
+Test time =   1.19 sec
+----------------------------------------------------------
+Test Passed.
+"cli" end time: Oct 22 02:52 E. Africa Standard Time
+"cli" time elapsed: 00:00:01
+----------------------------------------------------------
+
+End testing: Oct 22 02:52 E. Africa Standard Time

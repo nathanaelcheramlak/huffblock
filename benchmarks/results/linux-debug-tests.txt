@@ -1,0 +1,91 @@
+Start testing: Oct 22 02:56 EAT
+----------------------------------------------------------
+1/4 Testing: codec_and_archive
+1/4 Test: codec_and_archive
+Command: "/mnt/d/Dev/huffblock/build-debug/huffblock_tests"
+Directory: /mnt/d/Dev/huffblock/build-debug
+"codec_and_archive" start time: Oct 22 02:56 EAT
+Output:
+----------------------------------------------------------
+PASS CRC-32 known vectors
+PASS independently known canonical codes
+PASS single symbols and raw fallback
+PASS maximum 32-bit canonical code
+PASS raw fallback for codes beyond 32 bits
+PASS unaligned 32-bit encoder codes
+PASS seeded block round trips
+PASS malformed blocks
+PASS independently specified archive bytes
+PASS archive boundaries and mixed encodings
+PASS malformed and truncated archives
+PASS stream read, write, and flush failures
+PASS file preservation and failure cleanup
+13/13 test groups passed
+<end of output>
+Test time =   3.70 sec
+----------------------------------------------------------
+Test Passed.
+"codec_and_archive" end time: Oct 22 02:56 EAT
+"codec_and_archive" time elapsed: 00:00:03
+----------------------------------------------------------
+
+2/4 Testing: parallel_and_publication
+2/4 Test: parallel_and_publication
+Command: "/mnt/d/Dev/huffblock/build-debug/huffblock_parallel_tests"
+Directory: /mnt/d/Dev/huffblock/build-debug
+"parallel_and_publication" start time: Oct 22 02:56 EAT
+Output:
+----------------------------------------------------------
+PASS identical archives and round trips across execution settings
+PASS delayed first block bounds completed results and preserves order
+PASS reader, worker, and writer failures join all workers
+PASS shared cooperative stop token
+PASS parallel codec and I/O failures
+PASS temporary visibility, cleanup, and late destination collision
+PASS concurrent publication never overwrites
+PASS parallel file failure cleanup
+8/8 parallel test groups passed
+<end of output>
+Test time =   1.99 sec
+----------------------------------------------------------
+Test Passed.
+"parallel_and_publication" end time: Oct 22 02:56 EAT
+"parallel_and_publication" time elapsed: 00:00:01
+----------------------------------------------------------
+
+3/4 Testing: malformed_and_limits
+3/4 Test: malformed_and_limits
+Command: "/mnt/d/Dev/huffblock/build-debug/huffblock_adversarial_tests"
+Directory: /mnt/d/Dev/huffblock/build-debug
+"malformed_and_limits" start time: Oct 22 02:56 EAT
+Output:
+----------------------------------------------------------
+PASS resource and arithmetic limits
+PASS lookup, long-code, and padding boundaries
+Mutation cases: 30 accepted, 15766 rejected; seed 0x48554646
+PASS deterministic mutation and truncation campaign
+<end of output>
+Test time =   1.30 sec
+----------------------------------------------------------
+Test Passed.
+"malformed_and_limits" end time: Oct 22 02:56 EAT
+"malformed_and_limits" time elapsed: 00:00:01
+----------------------------------------------------------
+
+4/4 Testing: cli
+4/4 Test: cli
+Command: "/usr/bin/cmake" "-DHUFFBLOCK=/mnt/d/Dev/huffblock/build-debug/huffblock" "-DTEST_DIR=/mnt/d/Dev/huffblock/build-debug/cli-tests" "-P" "/mnt/d/Dev/huffblock/tests/cli.cmake"
+Directory: /mnt/d/Dev/huffblock/build-debug
+"cli" start time: Oct 22 02:56 EAT
+Output:
+----------------------------------------------------------
+-- CLI checks passed; artifacts: /mnt/d/Dev/huffblock/build-debug/cli-tests/e19f9892b10dfc4f
+<end of output>
+Test time =   0.77 sec
+----------------------------------------------------------
+Test Passed.
+"cli" end time: Oct 22 02:56 EAT
+"cli" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 22 02:56 EAT
